@@ -7,8 +7,8 @@ const method = "GET";
 // const headers = {"Field": "test-header-param"};
 const headers =  {
     "User-Agent":
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.141 Safari/537.36",
-},
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.141 Safari/537.36"
+};
 // const data = {"info": "abc"};
 var parsers = {
     title: new RegExp(/id="productTitle" .+>\s+(.+)\s+<\/span>/, "i"),
