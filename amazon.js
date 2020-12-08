@@ -7,9 +7,9 @@ const method = "GET";
 // const headers = {"Field": "test-header-param"};
 const headers = {"Field": "test-header-param"};
 // const data = {"info": "abc"};
-const parsers = {
-    title: new RegExp(/id="priceblock_ourprice" .+>￥(.+)<\/span>/, "i"),
-    price: new RegExp(/id="productTitle" .+>(.+)<\/span>/, "i"),
+var parsers = {
+    title: new RegExp(/id="productTitle" .+>\s+(.+)\s+<\/span>/, "i"),
+    price: new RegExp(/id="priceblock_ourprice" .+>￥(.+)<\/span>/, "i"),
 };
 const myRequest = {
     url: url,
