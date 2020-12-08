@@ -27,7 +27,7 @@ $task.fetch(myRequest).then(response => {
         title: html.match(parsers.title)[1],
         price: html.match(parsers.price)[1],
     };
-    console.log(amazon.title + ":" amazon.price);
+    console.log(amazon.title + ":" + amazon.price);
     if(amazon.price <= price){
         $.notify(
             `🎉🎉🎉亚马逊商品价格监控`,
