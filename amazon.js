@@ -7,7 +7,10 @@ const method = "GET";
 // const headers = {"Field": "test-header-param"};
 const headers = {"Field": "test-header-param"};
 // const data = {"info": "abc"};
-
+const parsers = {
+    title: new RegExp(/id="priceblock_ourprice" .+>￥(.+)<\/span>/, "i"),
+    price: new RegExp(/id="productTitle" .+>(.+)<\/span>/, "i"),
+};
 const myRequest = {
     url: url,
     method: method, // Optional, default GET.
@@ -16,9 +19,23 @@ const myRequest = {
 };
 
 $task.fetch(myRequest).then(response => {
-    // response.statusCode, response.headers, response.body
-    console.log(response.body);
-    $notify("Title", "Subtitle", response.body); // Success!
+    const html = response.body;
+    const amazon = {
+        title: html.match(parsers.title)[1],
+        price: html.match(parsers.price)[1],
+    };
+    $.log(amazon);
+    if(amazon.price <= price){
+        $.notify(
+            `🎉🎉🎉亚马逊商品价格监控`,
+            `商品名: ${amazon.title}`,
+            `当前价格: ${amazon.price}`,
+            {
+                "open-url": url,
+                "media-url": "",
+            }
+        );
+    }
     $done();
 }, reason => {
     // reason.error
