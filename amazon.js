@@ -17,5 +17,6 @@ $task.fetch(myRequest).then(response => {
     $done();
 }, reason => {
     $done();
+    console.log(reason.error);
     // reason.error
 });
