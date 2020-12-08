@@ -24,7 +24,7 @@ $task.fetch(myRequest).then(response => {
         title: html.match(parsers.title)[1],
         price: html.match(parsers.price)[1],
     };
-    $.log(amazon);
+    console.log(amazon);
     if(amazon.price <= price){
         $.notify(
             `🎉🎉🎉亚马逊商品价格监控`,
@@ -39,6 +39,7 @@ $task.fetch(myRequest).then(response => {
     $done();
 }, reason => {
     // reason.error
+    console.log(reason.error);
     $notify("Title", "Subtitle", reason.error); // Error!
     $done();
 });
