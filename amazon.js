@@ -4,7 +4,7 @@
 //商品链接
 const url = "https://www.amazon.cn/gp/product/B07MFZXR1B?smid=A2EDK7H33M5FFG&psc=1";
 //监控价格
-const price = 1643;
+const price = 1642;
 
 const method = "GET";
 const headers =  {
