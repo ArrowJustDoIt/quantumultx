@@ -2,7 +2,7 @@
 亚马逊商品价格监控
 *************************/
 const url = "https://www.amazon.cn/gp/product/B07MFZXR1B?smid=A2EDK7H33M5FFG&psc=1";
-const price = 1642;
+const price = 1643;
 const method = "GET";
 // const headers = {"Field": "test-header-param"};
 const headers =  {
@@ -27,7 +27,7 @@ $task.fetch(myRequest).then(response => {
         title: html.match(parsers.title)[1],
         price: html.match(parsers.price)[1],
     };
-    console.log(amazon);
+    console.log(amazon.title + ":" amazon.price);
     if(amazon.price <= price){
         $.notify(
             `🎉🎉🎉亚马逊商品价格监控`,
