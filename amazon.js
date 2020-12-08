@@ -25,7 +25,7 @@ $task.fetch(myRequest).then(response => {
     const html = response.body;
     const amazon = {
         title: html.match(parsers.title)[1],
-        price: html.match(parsers.price)[1],
+        price: parseFloat(html.match(parsers.price)[1].replace(/[^\d\.-]/g, "")),
     };
     console.log(amazon.title + ":" + amazon.price);
     if(amazon.price <= price){
