@@ -29,7 +29,7 @@ $task.fetch(myRequest).then(response => {
     };
     console.log(amazon.title + ":" + amazon.price);
     if(amazon.price <= price){
-        $.notify(
+        $notify(
             `🎉🎉🎉亚马逊商品价格监控 ¥${amazon.price}`,
             `商品名: ${amazon.title}`,
             `当前价格: ${amazon.price}`,
