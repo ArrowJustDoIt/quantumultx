@@ -43,6 +43,5 @@ $task.fetch(myRequest).then(response => {
 }, reason => {
     // reason.error
     console.log(reason.error);
-    $notify("Title", "Subtitle", reason.error); // Error!
     $done();
 });
