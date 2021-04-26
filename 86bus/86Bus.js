@@ -28,7 +28,7 @@ $task.fetch(myRequest).then(response => {
         jsonObj["records"].forEach(function(e){
                 var unSale = e.totalSeats - e.totalSaled;
                 if(unSale > 0){
-                    str += e.recordDate + ":" + unSale + "<br/>";
+                    str += e.recordDate + ":" + unSale;
                     data += e.recordDate + ","
                 }
             })
@@ -36,7 +36,7 @@ $task.fetch(myRequest).then(response => {
     
     if(str != ""){
         $notify(
-            `🎉🎉🎉Bus库存监控`,
+            `🎉🎉🎉Bus库存监控,有票啦!!!`,
             `日期: ${data}`,
             `余票: ${str}`,
             {
