@@ -8,8 +8,7 @@ const price = 1642;
 
 const method = "POST";
 const headers =  {
-    "User-Agent":
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.141 Safari/537.36"
+    "Content-Type": "application/json"
 };
 var data = {"lineId":70,"time":"06:50"};
 
