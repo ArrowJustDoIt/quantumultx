@@ -27,13 +27,12 @@ $task.fetch(myRequest).then(response => {
     if(jsonObj["total"] !== 0){
         jsonObj["records"].forEach(function(e){
                 var unSale = e.totalSeats - e.totalSaled;
-                if(unSale >= 0){
+                if(unSale > 0){
                     str += e.recordDate + ":" + unSale + "<br/>";
                     data += e.recordDate + ","
                 }
             })
-    } 
-    console.log(jsonObj);
+    }
     
     if(str != ""){
         $notify(
