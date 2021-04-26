@@ -22,24 +22,30 @@ const myRequest = {
 $task.fetch(myRequest).then(response => {
     const ret = response.body;
     jsonObj = JSON.parse(ret)
-    if(jsonObj.total !== 0){
-        jsonObj.records.forEach(function(e){  
-            console.log(e);
-        })
-    }
+    var str = ""
+    var data = ""
+    if(jsonObj["total"] !== 0){
+        jsonObj["records"].forEach(function(e){
+                var unSale = e.totalSeats - e.totalSaled;
+                if(unSale >= 0){
+                    str += e.recordDate + ":" + unSale + "<br/>";
+                    data += e.recordDate + ","
+                }
+            })
+    } 
     console.log(jsonObj);
     
-    // if(amazon.price <= price){
-    //     $notify(
-    //         `🎉🎉🎉亚马逊商品价格监控 ¥${amazon.price}`,
-    //         `商品名: ${amazon.title}`,
-    //         `当前价格: ${amazon.price}`,
-    //         {
-    //             "open-url": url,
-    //             "media-url": "",
-    //         }
-    //     );
-    // }
+    if(str != ""){
+        $notify(
+            `🎉🎉🎉Bus库存监控`,
+            `日期: ${data}`,
+            `余票: ${str}`,
+            {
+                "open-url": "",
+                "media-url": "",
+            }
+        );
+    }
     $done();
 }, reason => {
     // reason.error
