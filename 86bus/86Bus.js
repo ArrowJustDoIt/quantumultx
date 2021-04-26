@@ -21,8 +21,13 @@ const myRequest = {
 
 $task.fetch(myRequest).then(response => {
     const ret = response.body;
-    
-    console.log(ret);
+    jsonObj = JSON.parse(ret)
+    if(jsonObj.total !== 0){
+        jsonObj.records.forEach(function(e){  
+            console.log(e);
+        })
+    }
+    console.log(jsonObj);
     
     // if(amazon.price <= price){
     //     $notify(
