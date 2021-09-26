@@ -10,8 +10,8 @@ const method = "POST";
 const headers =  {
     "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
 };
-//填入日期即可,比如2021-09-27 填27
-const alreadyBuyDate = ["27"];
+//双括号里面填入日期即可,比如2021-09-27 填27 多个用逗号分隔,比如27,28,29
+const alreadyBuyDate = [27];
 var data = "sid=81623050441a472d9f7b16ce0eee9aad_50706394&id=496&timetable_start_date=2021-09-26";
 
 const myRequest = {
@@ -31,7 +31,7 @@ $task.fetch(myRequest).then(response => {
                 var unSale = e.seatcount - e.buy_num;
                 var timearr=e.go_date.replace(" ",":").replace(/\:/g,"-").split("-");
 
-                if(unSale > 0 && !alreadyBuyDate.includes(timearr[timearr.length - 1])){
+                if(unSale > 0 && !alreadyBuyDate.includes(timearr[timearr.length - 1].toString())){
                     str += e.go_date + ":" + unSale;
                     data += e.go_date + ","
                 }
