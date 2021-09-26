@@ -16,7 +16,7 @@ const myRequest = {
     url: url,
     method: method,
     headers: headers,
-    body: JSON.stringify(data)
+    body: data
 };
 
 $task.fetch(myRequest).then(response => {
@@ -24,7 +24,6 @@ $task.fetch(myRequest).then(response => {
     jsonObj = JSON.parse(ret)
     var str = ""
     var data = ""
-    console.log(jsonObj)
     if(jsonObj["error_code"] == 0){
         jsonObj["info"]["timetable"]["06:50"].forEach(function(e){
                 var unSale = e.seatcount - e.buy_num;
