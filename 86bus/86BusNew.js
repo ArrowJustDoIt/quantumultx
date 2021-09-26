@@ -24,6 +24,7 @@ $task.fetch(myRequest).then(response => {
     jsonObj = JSON.parse(ret)
     var str = ""
     var data = ""
+    console.log(jsonObj)
     if(jsonObj["error_code"] == 0){
         jsonObj["info"]["timetable"]["06:50"].forEach(function(e){
                 var unSale = e.seatcount - e.buy_num;
