@@ -28,7 +28,7 @@ $task.fetch(myRequest).then(response => {
     const tempH = html.substr(html.indexOf("(") + 1)
     const a= tempH.substr(0, tempH.lastIndexOf(')'))
     var jstr = JSON.parse(a);
-	console.log(jstr.stockInfo.stockState);
+	console.log(jstr["stockInfo"]["stockState"]);
 	console.log(jstr)
     
     /*const amazon = {
