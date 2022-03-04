@@ -2,7 +2,8 @@
 京东商品价格监控
 *************************/
 //商品链接
-const url = "https://item.jd.com/100033551654.html";
+// const url = "https://item.jd.com/100033551654.html";
+const url = "https://item.m.jd.com/100033551654.html";
 // const url = "https://item.jd.com/100002718287.html";
 //监控价格
 const price = 1642;
@@ -14,7 +15,8 @@ const headers =  {
 };
 var parsers = {
     // title: new RegExp(/id="store-prompt" class="store-prompt"><strong>(.+)<\/strong>/, "i"),
-    title: new RegExp(/id="store-prompt" .+><strong>(.+)<\/strong>/, "i"),
+    // title: new RegExp(/id="store-prompt" .+><strong>(.+)<\/strong>/, "i"),
+    title: new RegExp(/id="postNotice" .+><small><span>(.+)<\/span>/, "i"),
 };
 const myRequest = {
     url: url,
@@ -23,6 +25,8 @@ const myRequest = {
 };
 
 /*\\
+<span id="postNotice" style=""><small><span>无货</span><b id="postTip"></b></small></span>
+
 <div id="store-prompt" class="store-prompt"><strong>无货</strong>，此商品暂时售完</div>
 <div id="store-prompt" class="store-prompt"><strong>有货</strong></div>
 */
