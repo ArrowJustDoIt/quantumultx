@@ -28,22 +28,15 @@ $task.fetch(myRequest).then(response => {
     const tempH = html.substr(html.indexOf("(") + 1)
     const a= tempH.substr(0, tempH.lastIndexOf(')'))
     var jstr = JSON.parse(a);
-	console.log(jstr["stockInfo"]["stockState"]);
-	console.log(jstr)
-    
-    /*const amazon = {
-        title: html.match(parsers.title)[1],
-    };
-    console.log(amazon.title);
-    if(amazon.title == "有货"){
+    if(jstr["stockInfo"]["stockState"] != 34){
         $notify(
-            `🎉🎉🎉爱奇艺有货啦 ¥${amazon.title}`,
+            `🎉🎉🎉爱奇艺有货啦`,
             {
                 "open-url": url,
                 "media-url": "",
             }
         );
-    }*/
+    }
     $done();
 }, reason => {
     // reason.error
