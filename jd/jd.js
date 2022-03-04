@@ -3,6 +3,7 @@
 *************************/
 //商品链接
 const url = "https://item.jd.com/100033551654.html";
+// const url = "https://item.jd.com/100002718287.html";
 //监控价格
 const price = 1642;
 
@@ -32,6 +33,7 @@ const myRequest = {
 $task.fetch(myRequest).then(response => {
     const html = response.body;
     console.log(html.match(parsers.title));
+    console.log(html);
     
     /*const amazon = {
         title: html.match(parsers.title)[1],
