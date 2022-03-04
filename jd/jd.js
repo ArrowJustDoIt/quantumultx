@@ -2,7 +2,7 @@
 京东商品价格监控
 *************************/
 //商品链接
-const url = "https://item-soa.jd.com/getWareBusiness?callback=jQuery911344&skuId=100033551654&cat=17329%2C2577%2C2589&area=19_1601_50258_62835&shopId=1000004123&venderId=1000004123&paramJson=%7B%22platform2%22%3A%22100000000001%22%2C%22specialAttrStr%22%3A%22p0ppppppppp2pppppppppppp%22%2C%22skuMarkStr%22%3A%2200%22%7D&num=1";
+const url = "https://item-soa.jd.com/getWareBusiness?callback=jQuery911344&skuId=100033551654&cat=17329%2C2577%2C2589&area=19_1601_50283_53526&shopId=1000004123&venderId=1000004123&paramJson=%7B%22platform2%22%3A%22100000000001%22%2C%22specialAttrStr%22%3A%22p0ppppppppp2pppppppppppp%22%2C%22skuMarkStr%22%3A%2200%22%7D&num=1";
 
 
 const method = "GET";
