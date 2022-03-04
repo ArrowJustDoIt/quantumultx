@@ -25,7 +25,9 @@ const myRequest = {
 */
 $task.fetch(myRequest).then(response => {
     const html = response.body;
-    console.log(html);
+    const tempH = html.substr(html.indexOf("(") + 1)
+    const a= tempH.substr(0, tempH.lastIndexOf(')'))
+    console.log(a);
     /*var jstr = JSON.parse(response.body);
 
 	console.log(jstr.stockInfo.stockState);
