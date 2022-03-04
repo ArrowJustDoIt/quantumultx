@@ -12,7 +12,8 @@ const headers =  {
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.141 Safari/537.36"
 };
 var parsers = {
-    title: new RegExp(/id="store-prompt" class="store-prompt"><strong>(.+)<\/strong>/, "i"),
+    // title: new RegExp(/id="store-prompt" class="store-prompt"><strong>(.+)<\/strong>/, "i"),
+    title: new RegExp(/id="store-prompt" .+><strong>(.+)<\/strong>/, "i"),
 };
 const myRequest = {
     url: url,
@@ -30,6 +31,8 @@ const myRequest = {
 $task.fetch(myRequest).then(response => {
     const html = response.body;
     console.log(html.match(parsers.title));
+    console.log(html);
+    
     /*const amazon = {
         title: html.match(parsers.title)[1],
     };
