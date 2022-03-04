@@ -21,15 +21,13 @@ $task.fetch(myRequest).then(response => {
     const tempH = html.substr(html.indexOf("(") + 1)
     const a= tempH.substr(0, tempH.lastIndexOf(')'))
     var jstr = JSON.parse(a);
-    console.log(jstr["stockInfo"]["stockState"])
-    console.log(jstr["stockInfo"]["stockState"] == 34)
     if(jstr["stockInfo"]["stockState"] == 34){
         $notify(
             `🎉🎉🎉爱奇艺有货啦`,
             `商品名: `,
             `当前价格: `,
             {
-                "open-url": url,
+                "open-url": "",
                 "media-url": "",
             }
         );
@@ -39,7 +37,7 @@ $task.fetch(myRequest).then(response => {
         `商品名: `,
         `当前价格: `,
         {
-            "open-url": url,
+            "open-url": "",
             "media-url": "",
         }
     );
