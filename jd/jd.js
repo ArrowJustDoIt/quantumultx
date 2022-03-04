@@ -29,7 +29,8 @@ const myRequest = {
 */
 $task.fetch(myRequest).then(response => {
     const html = response.body;
-    const amazon = {
+    console.log(html.match(parsers.title));
+    /*const amazon = {
         title: html.match(parsers.title)[1],
     };
     console.log(amazon.title);
@@ -41,7 +42,7 @@ $task.fetch(myRequest).then(response => {
                 "media-url": "",
             }
         );
-    }
+    }*/
     $done();
 }, reason => {
     // reason.error
