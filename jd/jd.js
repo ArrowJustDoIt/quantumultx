@@ -27,13 +27,11 @@ $task.fetch(myRequest).then(response => {
     const html = response.body;
     const tempH = html.substr(html.indexOf("(") + 1)
     const a= tempH.substr(0, tempH.lastIndexOf(')'))
-    console.log(a);
-    /*var jstr = JSON.parse(response.body);
-
+    var jstr = JSON.parse(a);
 	console.log(jstr.stockInfo.stockState);
 	console.log(jstr)
     
-    const amazon = {
+    /*const amazon = {
         title: html.match(parsers.title)[1],
     };
     console.log(amazon.title);
