@@ -26,6 +26,8 @@ $task.fetch(myRequest).then(response => {
     if(jstr["stockInfo"]["stockState"] == 34){
         $notify(
             `🎉🎉🎉爱奇艺有货啦`,
+            `商品名: `,
+            `当前价格: `,
             {
                 "open-url": url,
                 "media-url": "",
@@ -33,12 +35,14 @@ $task.fetch(myRequest).then(response => {
         );
     }
     $notify(
-            `🎉🎉🎉爱奇艺有货啦`,
-            {
-                "open-url": url,
-                "media-url": "",
-            }
-        );
+        `🎉🎉🎉爱奇艺有货啦`,
+        `商品名: `,
+        `当前价格: `,
+        {
+            "open-url": url,
+            "media-url": "",
+        }
+    );
     $done();
 }, reason => {
     // reason.error
