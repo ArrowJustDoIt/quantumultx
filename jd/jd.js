@@ -22,7 +22,7 @@ $task.fetch(myRequest).then(response => {
     // const tempH = html.substr(html.indexOf("(") + 1)
     // const a= tempH.substr(0, tempH.lastIndexOf(')'))
     var jstr = JSON.parse(html);
-    if(jstr["100033551654"]["StockState"] == 34){
+    if(jstr["100033551654"]["StockState"] != 34){
         $notify(
             `🎉🎉🎉爱奇艺有货啦`,
             `商品名: `,
