@@ -5,18 +5,11 @@
 // const url = "https://item.jd.com/100033551654.html";
 const url = "https://item-soa.jd.com/getWareBusiness?callback=jQuery911344&skuId=100033551654&cat=17329%2C2577%2C2589&area=19_1601_50258_62835&shopId=1000004123&venderId=1000004123&paramJson=%7B%22platform2%22%3A%22100000000001%22%2C%22specialAttrStr%22%3A%22p0ppppppppp2pppppppppppp%22%2C%22skuMarkStr%22%3A%2200%22%7D&num=1";
 // const url = "https://item.jd.com/100002718287.html";
-//监控价格
-const price = 1642;
 
 const method = "GET";
 const headers =  {
     "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.141 Safari/537.36"
-};
-var parsers = {
-    // title: new RegExp(/id="store-prompt" class="store-prompt"><strong>(.+)<\/strong>/, "i"),
-    // title: new RegExp(/id="store-prompt" .+><strong>(.+)<\/strong>/, "i"),
-    title: new RegExp(/id="postNotice" .+><small><span>(.+)<\/span>/, "i"),
 };
 const myRequest = {
     url: url,
@@ -32,12 +25,13 @@ const myRequest = {
 */
 $task.fetch(myRequest).then(response => {
     const html = response.body;
-    var jstr = JSON.parse(response.body);
+    console.log(html);
+    /*var jstr = JSON.parse(response.body);
 
 	console.log(jstr.stockInfo.stockState);
 	console.log(jstr)
     
-    /*const amazon = {
+    const amazon = {
         title: html.match(parsers.title)[1],
     };
     console.log(amazon.title);
