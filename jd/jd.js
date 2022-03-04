@@ -13,7 +13,8 @@ const headers =  {
 };
 var parsers = {
     // title: new RegExp(/id="store-prompt" class="store-prompt"><strong>(.+)<\/strong>/, "i"),
-    title: new RegExp(/id="store-prompt" .+><strong>(.+)<\/strong>/, "i"),
+    // title: new RegExp(/id="store-prompt" .+><strong>(.+)<\/strong>/, "i"),
+    title: new RegExp(/(\d+)/, "i"),
 };
 const myRequest = {
     url: url,
@@ -31,7 +32,6 @@ const myRequest = {
 $task.fetch(myRequest).then(response => {
     const html = response.body;
     console.log(html.match(parsers.title));
-    console.log(html);
     
     /*const amazon = {
         title: html.match(parsers.title)[1],
