@@ -14,8 +14,7 @@ const headers =  {
 };
 var parsers = {
     // title: new RegExp(/id="store-prompt" class="store-prompt"><strong>(.+)<\/strong>/, "i"),
-    // title: new RegExp(/id="store-prompt" .+><strong>(.+)<\/strong>/, "i"),
-    title: new RegExp(/(\d+)/, "i"),
+    title: new RegExp(/id="store-prompt" .+><strong>(.+)<\/strong>/, "i"),
 };
 const myRequest = {
     url: url,
@@ -24,16 +23,13 @@ const myRequest = {
 };
 
 /*\\
-
 <div id="store-prompt" class="store-prompt"><strong>无货</strong>，此商品暂时售完</div>
-
-
 <div id="store-prompt" class="store-prompt"><strong>有货</strong></div>
 */
 $task.fetch(myRequest).then(response => {
     const html = response.body;
     console.log(html.match(parsers.title));
-    console.log(html);
+    console.log(response.body)
     
     /*const amazon = {
         title: html.match(parsers.title)[1],
