@@ -21,7 +21,7 @@ $task.fetch(myRequest).then(response => {
     const tempH = html.substr(html.indexOf("(") + 1)
     const a= tempH.substr(0, tempH.lastIndexOf(')'))
     var jstr = JSON.parse(a);
-    if(jstr["stockInfo"]["stockState"] == 34){
+    if(jstr["stockInfo"]["stockState"] != 34){
         $notify(
             `🎉🎉🎉爱奇艺有货啦`,
             `商品名: `,
@@ -32,15 +32,6 @@ $task.fetch(myRequest).then(response => {
             }
         );
     }
-    $notify(
-        `🎉🎉🎉爱奇艺有货啦`,
-        `商品名: `,
-        `当前价格: `,
-        {
-            "open-url": "",
-            "media-url": "",
-        }
-    );
     $done();
 }, reason => {
     // reason.error
